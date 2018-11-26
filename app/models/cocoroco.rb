@@ -1,0 +1,2 @@
+class Cocoroco < ApplicationRecord
+end
