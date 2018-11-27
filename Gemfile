@@ -9,8 +9,6 @@ gem 'rails', '5.1.6'
 gem 'redis'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3'
-gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
