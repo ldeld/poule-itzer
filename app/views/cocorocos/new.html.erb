@@ -1,2 +1,13 @@
-<h1>Cocorocos#new</h1>
-<p>Find me in app/views/cocorocos/new.html.erb</p>
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    <div class="form-group">
+      <%= form_for @cocoroco do |f| %>
+        <%= f.text_field :author, class: 'form-control' %>
+        <%= f.text_area :content, class: 'form-control' %>
+        <%= f.text_field :profile_image_url, class: 'form-control' %>
+        <%= f.text_field :attached_image_url, class: 'form-control' %>
+        <%= f.submit 'Create new post', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
