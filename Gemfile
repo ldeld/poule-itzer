@@ -15,6 +15,8 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'twitter'
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
