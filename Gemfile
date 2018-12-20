@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'awesome_print'
 gem 'twitter'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'

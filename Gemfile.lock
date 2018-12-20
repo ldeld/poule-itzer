@@ -43,6 +43,7 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (9.3.1)
       execjs
+    awesome_print (1.8.0)
     bindex (0.5.0)
     buftok (0.2.0)
     builder (3.2.3)
@@ -222,6 +223,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  awesome_print
   delayed_job_active_record
   delayed_job_web
   dotenv-rails
