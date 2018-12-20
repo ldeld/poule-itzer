@@ -14,9 +14,6 @@ class CocorocosController < ApplicationController
     end
   end
 
-  def show
-  end
-
   private
 
   def cocoroco_params

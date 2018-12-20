@@ -1,5 +1,5 @@
-class PostLastTweetJob < ApplicationJob
-  queue_as :default
+PostLastTweetJob = Struct.new(:a) do
+  DEFAULT_TIME_INTERVAL = 5
 
   def perform
     return unless Running.status
@@ -25,7 +25,7 @@ class PostLastTweetJob < ApplicationJob
   end
 
   def set_next_job
-    interval = Running.interval || 5
-    PostLastTweetJob.create(run_at: interval.minutes.from_now)
+    interval = Running.interval || DEFAULT_TIME_INTERVAL
+    PostLastTweetJob.delay(run_at: interval.minutes.from_now).perform
   end
 end
