@@ -29,6 +29,8 @@ config.webpacker.check_yarn_integrity = true
     config.cache_store = :null_store
   end
 
+  config.read_encrypted_secrets = true
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
