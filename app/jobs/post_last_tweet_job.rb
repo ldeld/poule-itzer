@@ -3,11 +3,17 @@ PostLastTweetJob = Struct.new(:a) do
 
   def perform
     return unless Running.status
-    cocoroco_to_post = Cocoroco.order(:last_tweeted_at).first
+    cocoroco_to_post = Cocoroco.order(:last_tweeted_at).last
     client.update(cocoroco_to_post.twitter_formated_string)
     cocoroco_to_post.update(last_tweeted_at: DateTime.now)
+  end
 
+  def success(job)
     set_next_job
+  end
+
+  def error(job, exception)
+    binding.pry
   end
 
   private
@@ -26,6 +32,6 @@ PostLastTweetJob = Struct.new(:a) do
 
   def set_next_job
     interval = Running.interval || DEFAULT_TIME_INTERVAL
-    PostLastTweetJob.delay(run_at: interval.minutes.from_now).perform
+    PostLastTweetJob.new.delay(run_at: interval.minutes.from_now).perform
   end
 end

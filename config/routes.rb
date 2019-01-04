@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :cocorocos
+    resources :runnings
+
+    root to: "cocorocos#index"
+  end
+
   resources :cocorocos, only: %i[new index create show]
 
   post 'run' => 'application#run', as: 'run'

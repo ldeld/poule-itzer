@@ -1,7 +1,9 @@
 <div class="row">
-  <div class="col-md-6 col-sm-12 offset-md-3">
+  <div class="col-md-6 col-sm-12 offset-md-3 app-form">
+    <h3>Poule-itzer app</h3>
+    <h6>Les tweets sont postés sur @poule_itzer</h6>
     <div>
-      <%= form_for :app, url: @status ? stop_url : run_url do |f| %>
+      <%= form_for :app, url: @status ? stop_url : run_url, html: { class: 'app-form' } do |f| %>
         <%= f.label 'Interval (in minutes)' %>
         <%= f.select :interval, options_for_select((1..10).to_a, @interval), disabled: @status %>
         <%= f.submit (@status ? 'Stop application' : 'Run application'), class: 'btn btn-primary' %>

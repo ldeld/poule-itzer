@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def run
-    binding.pry
     Running.status = true
     Running.interval = params[:app][:interval]
     PostLastTweetJob.new.delay.perform
