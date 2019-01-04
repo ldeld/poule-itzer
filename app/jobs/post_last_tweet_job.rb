@@ -3,17 +3,13 @@ PostLastTweetJob = Struct.new(:a) do
 
   def perform
     return unless Running.status
-    cocoroco_to_post = Cocoroco.order(:last_tweeted_at).last
-    client.update(cocoroco_to_post.twitter_formated_string)
-    cocoroco_to_post.update(last_tweeted_at: DateTime.now)
+    cocoroco = Cocoroco.last
+    client.update(cocoroco.twitter_formated_string, media_ids: cocoroco.attached_image_url)
+    cocoroco.update(last_tweeted_at: DateTime.now)
   end
 
   def success(job)
     set_next_job
-  end
-
-  def error(job, exception)
-    binding.pry
   end
 
   private
