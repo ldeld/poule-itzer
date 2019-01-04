@@ -8,6 +8,11 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
 
+    def default_params
+      params[:order] ||= "created_at"
+      params[:direction] ||= "desc"
+    end
+
     def authenticate_admin
       # TODO Add authentication logic here.
     end
