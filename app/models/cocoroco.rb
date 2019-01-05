@@ -1,9 +1,8 @@
 class Cocoroco < ApplicationRecord
-  validates :content, presence: true, length: { maximum: 240 }
 
   def twitter_formated_string
     string = self.content
-    string += " - #{author}" if author.present? && string.length < (237 - author.length)
+    string += " - #{author}" if author.present?
     string
   end
 
