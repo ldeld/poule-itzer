@@ -20,6 +20,7 @@ gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 gem 'administrate'
 gem 'aws-sdk-s3'
+gem 'rollbar'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
