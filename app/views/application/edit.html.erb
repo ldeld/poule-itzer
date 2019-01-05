@@ -8,5 +8,9 @@
         <%= f.select :interval, options_for_select((1..10).to_a, @interval), disabled: @status %>
         <%= f.submit (@status ? 'Stop application' : 'Run application'), class: 'btn btn-primary' %>
       <% end %>
+    </div>
+    <div>
+      or <%= link_to 'Create new Tweet', new_admin_cocoroco_path %>
+    </div>
   </div>
 </div>
