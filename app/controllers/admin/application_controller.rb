@@ -6,10 +6,10 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_admin
+    before_action :default_params
 
     def default_params
-      params[:order] ||= "created_at"
+      params[:order] ||= "id"
       params[:direction] ||= "desc"
     end
 

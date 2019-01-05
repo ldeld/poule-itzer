@@ -15,7 +15,7 @@ module Admin
 
       if @cocoroco.save
         redirect_to(
-          [namespace, @cocoroco],
+          admin_cocorocos_path,
           notice: translate_with_resource("create.success"),
         )
       else
