@@ -1,14 +1,30 @@
-// Specific CSS for your home-page
-.app-form {
-  text-align: center;
-  padding: 40px;
+html {
+  background-color: $base-background-color;
+  box-sizing: border-box;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+figure {
+  margin: 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
 
 $administrate_mobile_threshold: 500px;
 
 .app-container {
     display: block;
-    color: red;
+    min-width: 700px;
 }
 
 .navigation__link {
