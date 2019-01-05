@@ -6,7 +6,7 @@ PostLastTweetJob = Struct.new(:cocoroco) do
     return unless Running.status
     image_path = cocoroco.attached_image_url? ? open(cocoroco.attached_image_url).path : nil
     tweet = cocoroco.twitter_formated_string
-    if tweet.length < 240
+    if tweet.length < 270
       post_tweet(tweet, image_path)
     else
       tweets = splitted_string(tweet)
@@ -34,7 +34,7 @@ PostLastTweetJob = Struct.new(:cocoroco) do
     strings = []
     str.split(' ').each do |word|
       new_string = curr_str + ' ' + word
-      if new_string.length > 210
+      if new_string.length > 260
         strings << curr_str
         curr_str = ' '
       else
