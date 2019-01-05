@@ -14,7 +14,7 @@ class CocorocoDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     profile_image_url: Field::String,
-    attached_image_url: Field::String,
+    attached_image_url: AttachedImageField,
     last_tweeted_at: Field::DateTime,
   }.freeze
 
