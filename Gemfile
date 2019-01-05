@@ -19,6 +19,7 @@ gem 'twitter'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 gem 'administrate'
+gem 'aws-sdk-s3'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

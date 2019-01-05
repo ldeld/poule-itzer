@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   def run
     Running.status = true
     Running.interval = params[:app][:interval]
-    PostLastTweetJob.new.delay.perform
+    cocoroco_to_post = Cocoroco.next_to_post
+    PostLastTweetJob.new(cocoroco_to_post).delay.perform
     redirect_to root_path, notice: 'Application started!'
   end
 
