@@ -26,6 +26,7 @@ class CocorocoDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :content,
+    :attached_image_url,
     :author,
     :last_tweeted_at
   ].freeze

@@ -5,9 +5,7 @@ PostLastTweetJob = Struct.new(:cocoroco) do
   def perform
     return unless Running.status
     if cocoroco.attached_image_url
-      s3 = Aws::S3::Resource.new(region: 'eu-west-3')
-      obj = s3.bucket(SECRETS['aws_bucket']).object(cocoroco.attached_image_url)
-      image_path = open(obj.public_url).path
+      image_path = open(cocoroco.attached_image_url).path
       client.update_with_media(cocoroco.twitter_formated_string, image_path)
     else
       client.update(cocoroco.twitter_formated_string)

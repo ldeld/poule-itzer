@@ -35,7 +35,7 @@ module Admin
       obj = s3.bucket(SECRETS['aws_bucket']).object(key)
 
       obj.upload_file(image.path)
-      @cocoroco.attached_image_url = key
+      @cocoroco.attached_image_url = obj.public_url
     end
 
     def cocoroco_params
